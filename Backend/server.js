@@ -11,23 +11,23 @@ const supabase = createClient(
   process.env.SUPABASE_KEY
 );
 
-app.post("/add-student", async (req, res) => {
-  const { name, year } = req.body;
-
-  const { data, error } = await supabase
-    .from("students")
-    .insert([{ name, year }]);
-
-  if (error) return res.status(500).json(error);
-
-  res.json(data);
-});
-
 app.get("/", (req, res) => {
   res.send("Backend working 🚀");
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server running on " + PORT);
+app.post("/submit", async (req, res) => {
+  const { name, email } = req.body;
+
+  const { data, error } = await supabase
+    .from("students")
+    .insert([{ name, email }]);
+
+  if (error) {
+    return res.status(500).json({ error });
+  }
+
+  res.json({ message: "Data saved successfully" });
 });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("Server running"));
