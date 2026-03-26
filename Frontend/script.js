@@ -9,7 +9,7 @@ async function submitData() {
   email: document.getElementById("email").value
 };
 
-  const res = await fetch(`${API_URL}/submit`, {
+  const res = await fetch(`${API_URL}/students`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
