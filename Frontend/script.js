@@ -9,7 +9,8 @@ async function submitData() {
 
   try {
     // 🔥 Wake up backend first
-    await fetch(API_URL);
+    await fetch(API_URL, { method: "GET" });
+await new Promise(res => setTimeout(res, 3000));
 
     const res = await fetch(`${API_URL}/students`, {
       method: "POST",
