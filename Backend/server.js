@@ -5,8 +5,11 @@ const { createClient } = require("@supabase/supabase-js");
 const app = express();
 
 app.use(cors({
-  origin: "*"
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
 }));
+app.options("*", cors());
 app.use(express.json());
 
 const supabase = createClient(
