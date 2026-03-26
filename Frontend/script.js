@@ -1,4 +1,4 @@
-const API_URL = "https://your-render-url.onrender.com";
+const API_URL = "https://student-backend-dnnq.onrender.com";
 
 async function submitData() {
   const data = {
