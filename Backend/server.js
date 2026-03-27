@@ -4,12 +4,7 @@ const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"]
-}));
-app.options("*", cors());
+app.use(cors());
 app.use(express.json());
 
 const supabase = createClient(
@@ -17,10 +12,12 @@ const supabase = createClient(
   process.env.SUPABASE_KEY
 );
 
+// Test route
 app.get("/", (req, res) => {
   res.send("Backend working 🚀");
 });
 
+// Main route
 app.post("/students", async (req, res) => {
   const { name, usn, branch, year, email } = req.body;
 
