@@ -1,18 +1,17 @@
-async function submitData() {
-  const data = {
-    name: document.getElementById("name").value,
-    usn: document.getElementById("usn").value,
-    branch: document.getElementById("branch").value,
-    year: document.getElementById("year").value,
-    email: document.getElementById("email").value
-  };
+<script>
+document.querySelector("form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.querySelector("#name").value;
+  const usn = document.querySelector("#usn").value;
+  const branch = document.querySelector("#branch").value;
+  const year = document.querySelector("#year").value;
+  const email = document.querySelector("#email").value;
+
+  const data = { name, usn, branch, year, email };
 
   try {
-    // 🔥 Wake up backend first
-    await fetch(API_URL, { method: "GET" });
-await new Promise(res => setTimeout(res, 3000));
-
-    const res = await fetch(`${API_URL}/students`, {
+    const res = await fetch("https://student-backend-dnnq.onrender.com/students", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -20,11 +19,14 @@ await new Promise(res => setTimeout(res, 3000));
       body: JSON.stringify(data)
     });
 
-    const msg = await res.json();
-    alert(msg.message);
+    const result = await res.json();
+
+    alert("✅ Data submitted successfully!");
+    console.log(result);
 
   } catch (err) {
-    console.error(err);
-    alert("Server sleeping 😴... try again in 10 sec");
+    alert("😴 Server waking up... try again in 10 sec");
+    setTimeout(() => location.reload(), 10000);
   }
-}
+});
+</script>
