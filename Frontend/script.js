@@ -1,14 +1,13 @@
-<script>
-document.querySelector("form").addEventListener("submit", async function(e) {
-  e.preventDefault();
+async function submitData() {
+  console.log("Clicked 🔥");
 
-  const name = document.querySelector("#name").value;
-  const usn = document.querySelector("#usn").value;
-  const branch = document.querySelector("#branch").value;
-  const year = document.querySelector("#year").value;
-  const email = document.querySelector("#email").value;
-
-  const data = { name, usn, branch, year, email };
+  const data = {
+    name: document.getElementById("name").value,
+    usn: document.getElementById("usn").value,
+    branch: document.getElementById("branch").value,
+    year: document.getElementById("year").value,
+    email: document.getElementById("email").value
+  };
 
   try {
     const res = await fetch("https://student-backend-dnnq.onrender.com/students", {
@@ -21,12 +20,11 @@ document.querySelector("form").addEventListener("submit", async function(e) {
 
     const result = await res.json();
 
-    alert("✅ Data submitted successfully!");
+    alert("✅ Submitted successfully");
     console.log(result);
 
   } catch (err) {
-    alert("😴 Server waking up... try again in 10 sec");
-    setTimeout(() => location.reload(), 10000);
+    alert("😴 Server waking... try again");
+    console.log(err);
   }
-});
-</script>
+}
