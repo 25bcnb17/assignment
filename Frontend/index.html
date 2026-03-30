@@ -6,22 +6,24 @@
 </head>
 
 <body>
-  <div class="box">
-    <h3>Student Details</h3>
 
-    <input type="text" id="name" placeholder="Name">
-    <input type="text" id="usn" placeholder="USN">
-    <input type="text" id="branch" placeholder="Branch">
-    <input type="text" id="year" placeholder="Year">
-    <input type="email" id="email" placeholder="Email">
+  <div class="container">
+    <h2>Student Details</h2>
 
-    <button onclick="submitData()">Submit</button>
+    <form onsubmit="submitData(event)">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="text" id="usn" placeholder="USN" required>
+      <input type="text" id="branch" placeholder="Branch" required>
+      <input type="text" id="year" placeholder="Year" required>
+      <input type="email" id="email" placeholder="Email" required>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
-  <!-- JS inside HTML (no path issues 🔥) -->
   <script>
-    async function submitData() {
-      console.log("Clicked 🔥");
+    async function submitData(e) {
+      e.preventDefault(); // prevents page reload
 
       const data = {
         name: document.getElementById("name").value,
