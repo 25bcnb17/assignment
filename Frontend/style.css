@@ -1,55 +1,62 @@
+/* Base */
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #111, #000);
-  font-family: "Inter", sans-serif;
+  background: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #fff;
 }
 
 /* Container */
 .container {
-  max-width: 420px;
-  margin: 80px auto;
-  padding: 30px 20px;
-  border-radius: 20px;
-  background: #0a0a0a;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+  max-width: 360px;
+  margin: 120px auto;
+  padding: 0 20px;
 }
 
 /* Title */
 h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 25px;
-  text-align: center;
+  letter-spacing: -0.5px;
+  margin-bottom: 36px;
+  text-align: left; /* IMPORTANT change */
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 /* Inputs */
 input {
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 14px;
-  background: #000;
-  border: 1px solid #333;
-  border-radius: 14px;
+  padding: 18px;
+  background: #050505;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
   color: #fff;
   font-size: 15px;
-  transition: 0.2s;
 }
 
-/* Focus glow */
+/* Better placeholder tone */
+input::placeholder {
+  color: #6b6b6b;
+}
+
+/* Focus state (subtle, not flashy) */
 input:focus {
-  border-color: #fff;
-  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+  border-color: #444;
   outline: none;
 }
 
 /* Button */
 button {
-  width: 100%;
-  padding: 16px;
-  border-radius: 14px;
+  margin-top: 10px;
+  padding: 18px;
+  border-radius: 16px;
   border: none;
-  background: linear-gradient(90deg, #fff, #ccc);
+  background: #eaeaea;
   color: #000;
   font-weight: 600;
   font-size: 15px;
