@@ -1,38 +1,37 @@
 /* Base */
 body {
-  background: #000;
-  color: #fff;
-  font-family: "Inter", sans-serif;
   margin: 0;
+  background: #000;
+  font-family: "Inter", sans-serif;
+  color: #fff;
 }
 
 /* Container */
 .container {
-  max-width: 380px;
-  margin: 60px auto;
-  padding: 28px 20px;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 /* Title */
 h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 6px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
-.subtitle {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 25px;
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 /* Inputs */
 input {
-  width: 100%;
   padding: 16px;
-  margin-bottom: 14px;
-  background: #0a0a0a;
-  border: 1px solid #1f1f1f;
+  background: #111;
+  border: 1px solid #222;
   border-radius: 14px;
   color: #fff;
   font-size: 15px;
@@ -46,13 +45,12 @@ input:focus {
 
 /* Button */
 button {
-  width: 100%;
+  margin-top: 10px;
   padding: 16px;
-  border-radius: 999px;
+  border-radius: 14px;
   border: none;
   background: #fff;
   color: #000;
   font-weight: 600;
   font-size: 15px;
-  margin-top: 10px;
 }
