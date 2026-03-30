@@ -6,45 +6,53 @@ body {
   margin: 0;
 }
 
-/* Container (THIS is the main fix) */
+/* Container */
 .container {
-  max-width: 360px;
+  max-width: 380px;
   margin: 60px auto;
-  padding: 0 16px;
+  padding: 28px 20px;
 }
 
 /* Title */
 h2 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 25px;
 }
 
 /* Inputs */
 input {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 16px;
+  padding: 16px;
+  margin-bottom: 14px;
   background: #0a0a0a;
   border: 1px solid #1f1f1f;
-  border-radius: 12px;
+  border-radius: 14px;
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-/* Placeholder */
-input::placeholder {
-  color: #666;
+/* Focus = premium feel */
+input:focus {
+  border-color: #fff;
+  outline: none;
 }
 
 /* Button */
 button {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   border-radius: 999px;
   border: none;
   background: #fff;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 15px;
   margin-top: 10px;
 }
